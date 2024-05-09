@@ -17,9 +17,21 @@ interface DataGridDataSource {
     select: string[];
 }
 
+interface Task {
+    OrderDate: Date;
+    Task_ID: number;
+    Task_Subject: string;
+    Task_Start_Date: Date | string;
+    Task_Status: string;
+    ResponsibleEmployee: {
+        Employee_Full_Name: string;
+    };
+}
+
+
 function DataGridComponent() {
     const [dataSource, setDataSource] = useState<DataGridDataSource | null>(null);
-    const getOrderDay = (rowData) => (new Date(rowData.OrderDate)).getDay();
+    const getOrderDay = (rowData: Task) => (new Date(rowData.OrderDate)).getDay();
 
     useEffect(() => {
         const oDataStore = new ODataStore({
