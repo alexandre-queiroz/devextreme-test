@@ -53,12 +53,12 @@ function DataGridComponent() {
         });
     }, []);
 
-    const filterBuilderPopupPosition = {
+    const filterBuilderPopupPosition = typeof window !== 'undefined' ? {
         of: window,
         at: 'top' as const,
         my: 'top' as const,
         offset: { y: 10 },
-    };
+    } : undefined;
 
     const filterBuilder = {
         customOperations: [{
