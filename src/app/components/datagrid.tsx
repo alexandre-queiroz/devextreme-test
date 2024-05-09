@@ -8,8 +8,17 @@ import DataGrid, {
     FilterPanel,
     FilterBuilderPopup,
     Scrolling,
+    Paging,
+    Pager,
+    Selection
 } from 'devextreme-react/data-grid';
 import ODataStore from 'devextreme/data/odata/store';
+import { locale, loadMessages } from 'devextreme/localization';
+import ptMessages from 'devextreme/localization/messages/pt.json';
+
+locale('pt')
+loadMessages(ptMessages);
+
 
 interface DataGridDataSource {
     store: ODataStore;
@@ -47,18 +56,14 @@ function DataGridComponent() {
                 'Task_ID',
                 'Task_Subject',
                 'Task_Start_Date',
+                'Task_Priority',
                 'Task_Status',
+                'Task_Completion',
                 'ResponsibleEmployee/Employee_Full_Name',
+                'ResponsibleEmployee/Employee_Title',
             ],
         });
     }, []);
-
-    const filterBuilderPopupPosition = typeof window !== 'undefined' ? {
-        of: window,
-        at: 'top' as const,
-        my: 'top' as const,
-        offset: { y: 10 },
-    } : undefined;
 
     const filterBuilder = {
         customOperations: [{
@@ -78,17 +83,30 @@ function DataGridComponent() {
     }
 
     return (
-        <DataGrid dataSource={dataSource} showBorders={true} filterBuilder={filterBuilder}>
+        <DataGrid dataSource={dataSource} showBorders={true} filterBuilder={filterBuilder} allowColumnReordering={true}>
+            <Selection mode="multiple" selectAllMode="allPages" showCheckBoxesMode="always" />
+            <Paging enabled={true} pageSize={10} />
+            <Pager
+                visible={true}
+                allowedPageSizes={[5, 10, 20]}
+                showPageSizeSelector={true}
+                showNavigationButtons={true}
+                showInfo={true}
+                infoText="Página {0} de {1} ({2} registros)"
+            />
             <FilterRow visible={true} />
             <FilterPanel visible={true} />
-            <FilterBuilderPopup position={filterBuilderPopupPosition} />
+            <FilterBuilderPopup />
             <HeaderFilter visible={true} />
-            <Scrolling mode="infinite" />
-            <Column dataField="Task_ID" caption="ID" />
-            <Column dataField="Task_Subject" caption="Subject" />
-            <Column dataField="Task_Start_Date" caption="Start Date" />
+            <Scrolling />
+            <Column dataField="Task_ID" caption="Código da Tarefa" />
+            <Column dataField="Task_Subject" caption="Objetivo" />
+            <Column dataField="Task_Start_Date" caption="Data de Inicio" />
+            <Column dataField="Task_Priority" caption="Prioridade" />
             <Column dataField="Task_Status" caption="Status" />
-            <Column dataField="ResponsibleEmployee.Employee_Full_Name" caption="Responsible Employee" />
+            <Column dataField="Task_Completion" caption="% de finalização" />
+            <Column dataField="ResponsibleEmployee.Employee_Title" caption="Título do responsável" />
+            <Column dataField="ResponsibleEmployee.Employee_Full_Name" caption="Nome do responsável" />
         </DataGrid>
     );
 }

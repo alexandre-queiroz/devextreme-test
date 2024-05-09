@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "~devextreme/dist/css/dx.material.blue.light.css";
+@import "~devextreme/dist/css/dx.light.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -32,4 +32,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+td[role="columnheader"] {
+  text-align: center !important;
 }
