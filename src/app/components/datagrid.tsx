@@ -18,8 +18,8 @@ interface DataGridDataSource {
 }
 
 interface Task {
-    OrderDate: Date;
     Task_ID: number;
+    OrderDate: Date;
     Task_Subject: string;
     Task_Start_Date: Date | string;
     Task_Status: string;
