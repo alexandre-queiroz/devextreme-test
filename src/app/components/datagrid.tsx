@@ -88,7 +88,7 @@ function DataGridComponent() {
             <Column dataField="Task_Subject" caption="Subject" />
             <Column dataField="Task_Start_Date" caption="Start Date" />
             <Column dataField="Task_Status" caption="Status" />
-            <Column dataField="ResponsibleEmployee/Employee_Full_Name" caption="Responsible Employee" />
+            <Column dataField="ResponsibleEmployee.Employee_Full_Name" caption="Responsible Employee" />
         </DataGrid>
     );
 }
