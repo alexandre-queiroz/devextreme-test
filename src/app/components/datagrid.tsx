@@ -10,7 +10,9 @@ import DataGrid, {
     Scrolling,
     Paging,
     Pager,
-    Selection
+    Selection,
+    GroupPanel,
+    DataGridTypes
 } from 'devextreme-react/data-grid';
 import ODataStore from 'devextreme/data/odata/store';
 import { locale, loadMessages } from 'devextreme/localization';
@@ -18,7 +20,6 @@ import ptMessages from 'devextreme/localization/messages/pt.json';
 
 locale('pt')
 loadMessages(ptMessages);
-
 
 interface DataGridDataSource {
     store: ODataStore;
@@ -36,7 +37,6 @@ interface Task {
         Employee_Full_Name: string;
     };
 }
-
 
 function DataGridComponent() {
     const [dataSource, setDataSource] = useState<DataGridDataSource | null>(null);
@@ -83,8 +83,15 @@ function DataGridComponent() {
     }
 
     return (
-        <DataGrid dataSource={dataSource} showBorders={true} filterBuilder={filterBuilder} allowColumnReordering={true}>
+        <DataGrid 
+            dataSource={dataSource}
+            showBorders={true}
+            filterBuilder={filterBuilder}
+            allowColumnReordering={true}
+            allowColumnResizing={true}
+            columnResizingMode={"widget"} >
             <Selection mode="multiple" selectAllMode="allPages" showCheckBoxesMode="always" />
+            <GroupPanel visible={true} />
             <Paging enabled={true} pageSize={10} />
             <Pager
                 visible={true}
@@ -98,7 +105,7 @@ function DataGridComponent() {
             <FilterPanel visible={true} />
             <FilterBuilderPopup />
             <HeaderFilter visible={true} />
-            <Scrolling />
+            <Scrolling scrollByContent={true}/>
             <Column dataField="Task_ID" caption="Código da Tarefa" />
             <Column dataField="Task_Subject" caption="Objetivo" />
             <Column dataField="Task_Start_Date" caption="Data de Inicio" />
