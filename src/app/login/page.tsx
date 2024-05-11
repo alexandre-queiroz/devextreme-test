@@ -10,10 +10,9 @@ export default function Home() {
             <div className="flex flex-col md:flex-row h-full md:h-[658px] md:w-[1080px]">
                 <div className='relative md:w-[60%] h-full flex items-center justify-center'>
                     <Image
-                        className='absolute top-0 left-0 w-full h-full'
+                        className='absolute object-fill object-center top-0 left-0 w-full h-full'
                         src={backgroundImg}
-                        objectFit="fill"
-                        objectPosition="center"
+                        fill
                         alt="Background"
                     />
                     <div className='text-[16px] w-[80%] bg-black/50 backdrop-blur-sm p-3 mt-64 mb-16 md:mb-0 md:mt-80'>
@@ -28,15 +27,12 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className="flex md:w-[40%] h-full md:items-center md:justify-center bg-white rounded-3xl md:rounded-none md:m-0 -mt-6 z-10">
+                <div className="flex md:w-[40%] h-full md:items-center md:justify-center bg-white rounded-t-3xl md:rounded-none md:m-0 -mt-6 z-10">
                     <div className="flex flex-col w-full sm:h-[80%] mx-auto md:my-auto px-10">
                         <Image
-                            className='w-full mt-6 md:m-0'
+                            className='w-full object-cover object-center mt-6 md:m-0'
                             src={logo}
-                            objectFit="cover"
-                            objectPosition="center"
                             alt="Simpplify logo" />
-
                         <text className='text-black text-start font-medium mt-4 text-[16px]'>Faça login na sua conta</text>
                         <LoginInput Source={User} placeholder={"Usuário"} />
                         <LoginInput Source={Eye} placeholder={"Senha"} type='password' />
