@@ -37,3 +37,7 @@ body {
 td[role="columnheader"] {
   text-align: center !important;
 }
+
+textarea:focus, input:focus{
+  outline: none;
+}
