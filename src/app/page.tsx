@@ -1,12 +1,13 @@
-import DataGridComponent from './components/datagrid';
+import Hero from './components/login/hero'
+import Form from './components/login/form'
 
 export default function Home() {
-  return (
-    <main className='bg-[#f1f1f1] h-screen flex flex-col justify-center items-center text-center'>
-      <div className='bg-white border w-[75%] max-h-[70%]'>
-        <DataGridComponent />
-      </div>
-
-    </main>
-  );
+    return (
+        <main className='bg-[#323232] h-screen flex flex-col md:justify-center md:items-center'>
+            <div className="flex flex-col md:flex-row h-full md:h-[658px] md:w-[1080px]">
+                <Hero />
+                <Form />
+            </div>
+        </main>
+    );
 }

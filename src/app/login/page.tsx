@@ -30,13 +30,13 @@ export default function Home() {
                 <div className="flex md:w-[40%] h-full md:items-center md:justify-center bg-white rounded-t-3xl md:rounded-none md:m-0 -mt-6 z-10">
                     <div className="flex flex-col w-full sm:h-[80%] mx-auto md:my-auto px-10">
                         <div className='flex w-full justify-center'>
-                        <Image
-                            className='w-[80%] h-[80%] md:w-full object-cover object-center mt-6 md:m-0'
-                            src={logo}
-                            alt="Simpplify logo" />
+                            <Image
+                                className='w-[80%] h-[80%] md:w-full object-cover object-center mt-6 md:m-0'
+                                src={logo}
+                                alt="Simpplify logo" />
 
                         </div>
-                        <text className='text-black text-start font-medium text-[16px]'>Faça login na sua conta</text>
+                        <text className='text-black text-start mt-2 font-medium text-[16px]'>Faça login na sua conta</text>
                         <LoginInput Source={User} placeholder={"Usuário"} />
                         <LoginInput Source={Eye} placeholder={"Senha"} type='password' />
                         <LoginInput Source={KeyRound} placeholder={"Chave de acesso"} />
