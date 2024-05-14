@@ -36,8 +36,106 @@ body {
 
 td[role="columnheader"] {
   text-align: center !important;
+  background-color: #006C3E !important;
+}
+
+td[role="columnheader"]:last-child {
+  border-top-right-radius: 5px!important;  
+}
+
+[aria-haspopup="listbox"] {
+  background-color: #006C3E !important;
 }
 
 textarea:focus, input:focus{
   outline: none;
+}
+
+.dx-header-row {
+  
+  background-color: transparent;
+  color: white;
+}
+
+.dx-header-filter-empty {
+  color: white !important; 
+}
+
+.dx-header-filter {
+  color: white !important; 
+}
+
+.dx-datagrid-borders > .dx-datagrid-headers {  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+}  
+.dx-datagrid-borders > .dx-datagrid-total-footer,  
+.dx-datagrid-borders > .dx-datagrid-rowsview {  
+  border-bottom-left-radius: 5px;  
+  border-bottom-right-radius: 5px;  
+}
+
+.dx-datagrid-borders>.dx-datagrid-filter-panel {
+  border: none;
+}
+
+.dx-datagrid-pager {
+  border: none;
+}
+
+.dx-datagrid-borders > .dx-datagrid-headers {
+  border-top-left-radius: 5px!important;  
+  border-top-right-radius: 5px!important;  
+}  
+.dx-datagrid-borders > .dx-datagrid-total-footer,  
+.dx-datagrid-borders > .dx-datagrid-rowsview {  
+  border-bottom-left-radius: 5px!important;  
+  border-bottom-right-radius: 5px!important;  
+}
+
+.dx-header-row [aria-colindex="1"] {
+  background-color: #006C3E !important;
+  border-top-left-radius: 5px!important;   
+}
+
+.dx-button-content .dx-icon {
+  color: white;
+}
+
+.dx-icon .dx-icon-export {
+  color: white;
+}
+
+.dx-icon-filter {
+  color: #006C3E !important;
+}
+
+.dx-datagrid-filter-panel-text {
+  color: #006C3E !important;
+}
+
+.dx-header-row  td.dx-command-expand {
+  background-color: #006C3E !important;
+}
+
+.dx-toolbar-item-content .dx-datagrid-drag-action {
+  border-radius: 5px!important;
+}
+
+.dx-selection {
+  background-color: #006C3E !important;
+  color: white !important;
+}
+
+.dx-datagrid-filter-panel-clear-filter {
+  background-color: #006C3E !important;
+  color: white !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.dx-datagrid-filter-panel-text {
+  padding-top: 2.5px;
+  vertical-align: center;
+  
 }
